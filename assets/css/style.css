@@ -1,0 +1,10 @@
+header {
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: 70px;
+  padding-top: 10px;
+  margin: 0;
+  background: linear-gradient(10deg, rgb(250, 221, 126), rgb(70, 214, 250)) ;
+}
+
