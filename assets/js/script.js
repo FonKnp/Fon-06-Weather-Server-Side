@@ -3,26 +3,31 @@ let searchInput = document.getElementById('search-input');
 let cityInput = JSON.parse(localStorage.getItem('cityName'));
 
 let apiKey = '6054fcd953d7cd19d0770921f98b21c1';
-let currentUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityInput + '&appid=' + apiKey;
+let weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityInput + '&appid=' + apiKey;
 let forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityInput + '&appid=' + apiKey;
 
-function getcurrentUrl () {
+function getweatherUrl () {
   
-  fetch(currentUrl)
+  fetch(weatherUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function(data) {
       console.log(data);
-      // console.log(data.main.temp_min);
+      console.log(data.main);
+      console.log(data.main.temp);
+      console.log(data.wind.speed);
+      console.log(data.main.humidity);
     })
-    
+    .catch(function (error) {
+      console.log('ERROR');
+    })
 }
 
 searchBt.addEventListener('click', function(event) {
-  event.preventDefault();
+  // event.preventDefault();
   addInputValue();
-  getcurrentUrl(cityInput);
+  getweatherUrl(cityInput);
   searchInput.value = '';
 });
 
@@ -42,4 +47,4 @@ function addInputValue () {
 function getSearchHistory () {
 
 }
-getcurrentUrl();
+getweatherUrl();
