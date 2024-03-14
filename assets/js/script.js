@@ -1,4 +1,4 @@
-// let timeDisplayEl = document.getElementById('time-display');
+
 let searchBt = document.getElementById('search-button');
 let searchInput = document.getElementById('search-input');
 let searchHistory = document.getElementById('search-history');
@@ -17,11 +17,8 @@ let card5 = document.getElementById('card5');
 let cityInput = JSON.parse(localStorage.getItem('city')) || [];
 
 let apiKey = '6054fcd953d7cd19d0770921f98b21c1';
+let today = dayjs().format('MM/DD/YYYY');
 
-// function displayTime() {
-//   const rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
-//   timeDisplayEl.innerHTML = rightNow;
-// }
 
 function getweatherUrl (city) {
   let weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + apiKey;
@@ -31,7 +28,7 @@ function getweatherUrl (city) {
     if (response.ok) {
       response.json()
       .then(function(data) {
-        // console.log(data);
+        console.log(data);
         // console.log(data.list[0]);
         // console.log(data.list[0].main);
         // console.log(data.list[0].main.temp);
@@ -52,20 +49,30 @@ function displayWeather(info) {
   if (info.length === 0) {
     cityCard.textContent = 'Weather information not found!';
   } else {
-    cityName.innerHTML = info.city.name;
+    cityName.innerHTML = info.city.name + ' ' + today;
     // displayTime();
     currentIcon.src = 'https://openweathermap.org/img/wn/' + info.list[0].weather[0].icon +'@2x.png';
     currentTemp.textContent = 'Temp: ' + ((info.list[0].main.temp-273) * (9/5) + 32).toFixed(2) + ' ºF';
     currentWind.textContent = 'Wind: ' + info.list[0].wind.speed + ' MPH';
-    currentHumid.textContent = 'Humidity: ' + info.list[0].main.humidity + ' %'
+    currentHumid.textContent = 'Humidity: ' + info.list[0].main.humidity + ' %';
+    
   }
 }
 
-
-
 // get data from search history in local storage
 function getSearchHistory () {
-  
+  searchHistory.textContent = '';
+    for ( let i = 0; i < cityInput.length; i++) {
+      let cityHistory = document.createElement('button');
+      cityHistory.classList.add('btn', 'btn-info', 'mb-3');
+      cityHistory.setAttribute('value', cityInput[i]);
+      cityHistory.textContent = cityInput[i];
+      searchHistory.appendChild(cityHistory);
+
+      cityHistory.addEventListener('click', function() {
+      getweatherUrl(cityHistory.value);
+    })
+  }
 }
       
       
@@ -79,3 +86,5 @@ searchBt.addEventListener('click', function() {
   searchInput.value = '';
   getSearchHistory();
 });
+
+getSearchHistory();

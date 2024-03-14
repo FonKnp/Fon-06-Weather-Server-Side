@@ -18,19 +18,19 @@
       <main class="container-fluid">
         <section class="row justify-content-start">
 
-          <aside class="col-md-3">
+          <aside class="col-md-3 my-3 text-center">
             <h3>Search for a City:</h3>
-            <input id="search-input" type="text" placeholder="enter city name" spellcheck="false">
-            <button id="search-button" class="btn btn-primary">Search</button>
+            <input id="search-input" type="text" placeholder="enter city name">
+            <button id="search-button" class="btn btn-primary mt-3">Search</button>
             <hr>
-            <div id="search-history"></div>
+            <div id="search-history" class="d-flex flex-column"></div>
           </aside>
           
           <section class="col-md-8">
             <div class="row">
               <div class="card col-12">
                 <div id="citycard" class="card-body">
-                  <h3 id="city-name" class="align-middle">Detroit</h3>
+                  <h3 id="city-name" class="align-middle">City Name</h3>
                   <img id="current-pic" alt="current-weather-pic">
                   <p id="temp">Temp: </p>
                   <p id="wind">Wind: </p>
@@ -39,29 +39,13 @@
               </div>
             </div>
             <div class="row">
-              <h3>5-Day Forecast</h3>
+              <h3>5-Day Forecast:</h3>
               <div class="row">
-                <div id="card1" class="col-2 forecast-card">
-                  <ul><h5>03/14/2024</h5>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-                <div id="card2" class="col-2 forecast-card">
-                  <ul><h5>03/14/2024</h5>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-                <div id="card3" class="col-2 forecast-card"></div>
-                <div id="card4" class="col-2 forecast-card"></div>
-                <div id="card5" class="col-2 forecast-card"></div>
+                <div id="card1" class="forecast-card"></div>
+                <div id="card2" class="forecast-card"></div>
+                <div id="card3" class="forecast-card"></div>
+                <div id="card4" class="forecast-card"></div>
+                <div id="card5" class="forecast-card"></div>
               </div>
             </div>
           </section>
