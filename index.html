@@ -4,34 +4,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./assets/css/reset.css" /> -->
   <link rel="stylesheet" href="assets/css/style.css"/>
+  <title>Weather Dashboard</title>
 </head>
 
-<body>
-  <header>
-    <h1>Weather Dashboard</h1>
-  </header>
-  
-  <main class="d-flex">
-    <aside class="d-grid col-3 p-3">
-      <h3>Search for a City:</h3>
-      <input id="city-input" type="text" placeholder="enter city name" spellcheck="false">
-      <br>
-      <br>
-      <button id="search-button" class="btn btn-primary">Search</button>
-      <hr>
-    </aside>
+  <body>
+    <header>
+      <h1>Weather Dashboard</h1>
+    </header>
+    
+      <main class="container-fluid">
+        <div class="row justify-content-start">
 
-    <section>
-      <h3></h3>
-    </section>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="assets/js/script.js"></script>
-</body>
+          <aside class="col-md-3">
+            <h3>Search for a City:</h3>
+            <input id="search-input" type="text" placeholder="enter city name" spellcheck="false">
+            <button id="search-button" class="btn btn-primary">Search</button>
+            <hr>
+            <div id="search-history"></div>
+          </aside>
+          
+          <section class="col-md-8">
+            <div class="row">
+              <div class="card col-12">
+                <div class="card-body">
+                  <h3 id="city-name" class="align-middle">Detroit</h3>
+                  <img id="current-pic" alt="current-weather-pic">
+                  <p id="temp">Temp: </p>
+                  <p id="wind">Wind: </p>
+                  <p id="humidity">Humidity: </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <h3>5-Day Forecast</h3>
+              <div class="row">
+                <div id="card1" class="col-2 forecast-card"></div>
+                <div id="card2" class="col-2 forecast-card"></div>
+                <div id="card3" class="col-2 forecast-card"></div>
+                <div id="card4" class="col-2 forecast-card"></div>
+                <div id="card5" class="col-2 forecast-card"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
