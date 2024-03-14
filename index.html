@@ -16,7 +16,7 @@
     </header>
     
       <main class="container-fluid">
-        <div class="row justify-content-start">
+        <section class="row justify-content-start">
 
           <aside class="col-md-3">
             <h3>Search for a City:</h3>
@@ -29,7 +29,7 @@
           <section class="col-md-8">
             <div class="row">
               <div class="card col-12">
-                <div class="card-body">
+                <div id="citycard" class="card-body">
                   <h3 id="city-name" class="align-middle">Detroit</h3>
                   <img id="current-pic" alt="current-weather-pic">
                   <p id="temp">Temp: </p>
@@ -41,15 +41,31 @@
             <div class="row">
               <h3>5-Day Forecast</h3>
               <div class="row">
-                <div id="card1" class="col-2 forecast-card"></div>
-                <div id="card2" class="col-2 forecast-card"></div>
+                <div id="card1" class="col-2 forecast-card">
+                  <ul><h5>03/14/2024</h5>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <div id="card2" class="col-2 forecast-card">
+                  <ul><h5>03/14/2024</h5>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
                 <div id="card3" class="col-2 forecast-card"></div>
                 <div id="card4" class="col-2 forecast-card"></div>
                 <div id="card5" class="col-2 forecast-card"></div>
               </div>
             </div>
           </section>
-        </div>
+        </section>
       </main>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
