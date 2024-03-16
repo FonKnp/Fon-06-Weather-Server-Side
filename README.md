@@ -11,4 +11,8 @@ This weather website help you search for whatever city in the world and will giv
 This is the link to the website: [Weather Server APIs](https://fonknp.github.io/Fon-06-Weather-Server-Side/)
 
 This is the screenshot from the website.
-![Weather-server-screenshot]()
+![Weather-server-screenshot1](/assets/images/Weather-Screenshot-01.png)
+
+![Weather-server-screenshot2](/assets/images/Weather-Screenshot-02.png)
+
+![Weather-server-screenshot3](/assets/images/Weather-Screenshot-03.png)
