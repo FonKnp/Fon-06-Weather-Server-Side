@@ -16,3 +16,11 @@ This is the screenshot from the website.
 ![Weather-server-screenshot2](/assets/images/Weather-Screenshot-02.png)
 
 ![Weather-server-screenshot3](/assets/images/Weather-Screenshot-03.png)
+
+## Credits
+
+Me, my instructor, my peers, and Expert Learning.
+
+## License
+
+MIT
