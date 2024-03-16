@@ -1,3 +1,7 @@
+body {
+  color: white;
+}
+
 header {
   text-align: center;
   color: white;
@@ -5,11 +9,21 @@ header {
   height: 70px;
   padding-top: 10px;
   margin: 0;
-  background: linear-gradient(10deg, rgb(250, 221, 126), rgb(70, 214, 250)) ;
+  background: #002eaf;
 }
 
 input {
   width: 100%;
+}
+
+.card {
+  padding: 1%;
+  background: #0d6efdd1;
+  color: white;
+}
+
+.hide {
+  display: none;
 }
 
 #search-button {
