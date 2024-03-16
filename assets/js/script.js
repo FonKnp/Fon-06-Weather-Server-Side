@@ -128,6 +128,6 @@ searchBt.addEventListener('click', function(event) {
   forecastBox.classList.remove('hide');
 });
 
-getSearchHistory();
+
 cityCard.classList.add('hide');
 forecastBox.classList.add('hide');
